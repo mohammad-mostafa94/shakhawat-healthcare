@@ -7,7 +7,7 @@ import Services from './Services/Services';
 const HomePage = () => {
     return (
         <div>
-            <h1>Bismillah Hirrah Manir Rahim</h1>
+            {/* <h1>Bismillah Hirrah Manir Rahim</h1> */}
             <Header></Header>
             <Home></Home>
             <Services></Services>
