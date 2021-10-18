@@ -1,8 +1,12 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import useFirebase from '../../../Hooks/useFirebase';
 import logo from '../../../images/logo.jpg';
+import './Header.css';
 
 const Header = () => {
+
+    const {user,logOut} = useFirebase();
 
     const activeStyle={
         fontWeight: "bold",
@@ -12,7 +16,7 @@ const Header = () => {
     return (
         <div>
         <header >
-            <nav className="navbar navbar-expand-sm bg-info text-dark navbar-dark py-0 px-5">                
+            <nav className="navbar navbar-expand-sm   py-0 px-5 mb-3">                
                 <Link to="/" className="navbar-brand">
                     <img className="rounded-circle" src={logo} style={{width:'80px'}} alt="Logo" />
                 </Link>  
@@ -21,15 +25,17 @@ const Header = () => {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul className="navbar-nav ml-auto">
-                        <NavLink activeStyle={activeStyle} to='/home' className="nav-item text-decoration-none  ms-2">Home</NavLink>
-                        <NavLink activeStyle={activeStyle} to='/service' className="nav-item text-decoration-none  ms-2">Services</NavLink>
-                        <NavLink activeStyle={activeStyle} to='/team' className="nav-item text-decoration-none  ms-2">Team</NavLink>
-                        <NavLink activeStyle={activeStyle} to='/feature' className="nav-item text-decoration-none  ms-2">Feature</NavLink>
-                        {/* <Link to='/' className="nav-item text-decoration-none  ms-2"></Link> */}
-                        <NavLink activeStyle={activeStyle} to='/contact' className="nav-item text-decoration-none ms-2 ">Contact us</NavLink>
-                        <NavLink activeStyle={activeStyle} to='/login' className="nav-item text-decoration-none ms-2 ">Login</NavLink>
+                        <NavLink activeStyle={activeStyle} to='/home'  className="nav-item linkStyle ">Home</NavLink>
 
-                        {/* <button className="btn btn-primary">Logout</button> */}
+                        <NavLink activeStyle={activeStyle} to='/service' className="nav-item linkStyle">Services</NavLink>
+
+                        <NavLink activeStyle={activeStyle} to='/team' className="nav-item linkStyle">Team</NavLink>
+
+                        <NavLink activeStyle={activeStyle} to='/feature' className="nav-item linkStyle">Feature</NavLink>
+
+                        <NavLink activeStyle={activeStyle} to='/contact' className="nav-item linkStyle">Contact us</NavLink>
+
+                        {user.email ? <button onClick={logOut} className="btn btn-primary mx-1 py-0">Logout</button> : <NavLink activeStyle={activeStyle} to='/login' className="nav-item text-decoration-none ms-2 ">Login</NavLink>}
 
                     </ul>
                 </div>
