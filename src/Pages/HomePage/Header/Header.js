@@ -12,6 +12,7 @@ import './Header.css';
 const Header = () => {
 
     const {user,logOut} = useAuth();
+    const userName = user.name;
 
     const activeStyle={
         fontWeight: "bold",
@@ -23,7 +24,7 @@ const Header = () => {
         <header >
             <nav className="navbar navbar-expand-sm navbarStyle navbar-dark   mb-3">                
                 <Link to="/" className="navbar-brand">
-                    <img className="rounded-circle" src={logo} style={{width:'100px'}} alt="Logo" />
+                    <img className="rounded-circle p-0" src={logo} style={{width:'110px'}} alt="Logo" />
                 </Link>  
 
                 <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,9 +41,9 @@ const Header = () => {
 
                         <NavLink activeStyle={activeStyle} to='/feature' className="nav-item linkStyle">Feature</NavLink>
 
-                        <NavLink activeStyle={activeStyle} to='/' className="nav-item linkStyle">Contact us</NavLink>
+                        {userName && <h6 className="mx-3 text-warning">{userName.split(' ')[0]}</h6>}
 
-                        {user.email ? <Button variant="secondary" className=" mx-2" onClick={logOut} >logout<BiLogOut/></Button> : <NavLink  to='/login' className="nav-item mx-2  btn btn-secondary ">Login <FiLogIn/> </NavLink>}
+                        {userName ? <Button variant="secondary" className=" mx-2" onClick={logOut} >logout<BiLogOut/></Button> : <NavLink  to='/login' className="nav-item mx-2  btn btn-secondary ">Login <FiLogIn/> </NavLink>}
 
                     </ul>
                 </div>
