@@ -69,6 +69,7 @@ const useFirebase = () => {
             const user = result.user;
             setError('');
             console.log(user);
+            alert("you are successfully login");
           }).catch((error)=>{
             setError(error.message);
           })
@@ -81,7 +82,7 @@ const useFirebase = () => {
               setError('');
               verifyEmail();
               nameAdded();
-      
+              alert("you are successfully login");
               console.log(user);
             }).catch((error)=>{
               setError(error.message);
@@ -148,9 +149,9 @@ const useFirebase = () => {
         emailHandle,
         passwordHandle,
         formHandle,
+        resetPasswordHandle,
         signInzUsingGoogle,
         logOut
-
     }
 };
 

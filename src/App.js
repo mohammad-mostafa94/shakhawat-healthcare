@@ -4,6 +4,7 @@ import {
 } from "react-router-dom";
 import AuthProvider from "./Context/AuthProvider";
 import Contact from "./Pages/HomePage/Contact/Contact";
+import Footer from "./Pages/HomePage/Footer/Footer";
 import Header from "./Pages/HomePage/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
 import Services from "./Pages/HomePage/Services/Services";
@@ -24,6 +25,7 @@ function App() {
               <Route exact path="/login" component={Login} />
               <Route path="*" component={NotFound}/>
             </Switch>
+            <Footer></Footer>
         </Router>
     </AuthProvider>
     
