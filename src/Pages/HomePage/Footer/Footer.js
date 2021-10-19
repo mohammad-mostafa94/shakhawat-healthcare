@@ -14,8 +14,8 @@ const Footer = () => {
                 },
                 
                 {
-                    name: "Careers",
-                    link: "/careers"
+                    name: "Services",
+                    link: "/service"
                 },
                 
                 {
@@ -53,23 +53,23 @@ const Footer = () => {
      ];
     return (
         <div>
-            <h1>Footer</h1>
+            <h1 className="text-center text-danger mt-5">About Us !</h1>
             <SimpleReactFooter 
-    description={description} 
-    title={title}
-    columns={columns}
-    linkedin="fluffy_cat_on_linkedin"
-    facebook="fluffy_cat_on_fb"
-    twitter="fluffy_cat_on_twitter"
-    instagram="fluffy_cat_live"
-    youtube="UCFt6TSF464J8K82xeA?"
-    pinterest="fluffy_cats_collections"
-    copyright="black"
-    iconColor="black"
-    backgroundColor="bisque"
-    fontColor="black"
-    copyrightColor="darkgrey"
- />;
+                description={description} 
+                title={title}
+                columns={columns}
+                linkedin=""
+                facebook=""
+                twitter=""
+                instagram=""
+                youtube=""
+                pinterest=""
+                copyright="black"
+                iconColor="black"
+                backgroundColor="bisque"
+                fontColor="black"
+                copyrightColor="darkgrey"
+            />;
         </div>
     );
 };

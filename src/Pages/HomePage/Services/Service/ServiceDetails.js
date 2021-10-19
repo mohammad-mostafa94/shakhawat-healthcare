@@ -6,24 +6,23 @@ import { servicesData } from './ServiceData';
 const ServiceDetails = () => {
 
     const {serviceId} = useParams();
-    // const serviceItem = servicesData;
-    // const [id,image,name] = serviceItem;
-    // console.log("service id=",id,name,serviceId);
-
-    const singleItem =  servicesData.find(sv=>sv.id == serviceId);
+    
+    const singleItem =  servicesData.find(sv=>sv.id === parseInt(serviceId));
     console.log(singleItem);
-    const {image , name, describe} = singleItem;
+    const {image , name, describe ,id} = singleItem;
+    
+    console.log("service id=",name,serviceId,id);
+     
     return (
-        <div className="mh-100">
+        <div >
                 <Card className="bg-dark text-white">
-                <Card.Img src={image} />
-                <Card.ImgOverlay>
-                    <Card.Title>{name}</Card.Title>
-                    <Card.Text>
-                        {describe}
-                    </Card.Text>
-                    
-                </Card.ImgOverlay>
+                    <Card.Img style = {{height:"70vh"}} src={image} />
+                    <Card.ImgOverlay>
+                        <Card.Title>{name}</Card.Title>
+                        <Card.Text>
+                            {describe}
+                        </Card.Text>
+                    </Card.ImgOverlay>
                 </Card>
         </div>
     );
