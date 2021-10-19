@@ -1,11 +1,13 @@
 # Shakhawat Healthcare 
+This Health care (also health-care or healthcare) is the maintenance or improvement of health via the prevention, diagnosis, treatment, recovery, or cure of disease, illness, injury, and other physical and mental impairments in people.
 
-Live Link:
+Live Link: https://shakhawat-healtcare.web.app/
 
-## Available Scripts
+## 
 
-In the project directory, you can run:
-
-### `yarn start`
-
+- Everyone can take his/her  problem solve.
+- Maximum doctors everyday vistis this hospital.
+- Every  servises updateable  .
+- Every patien easily solve every problem .
+- Each and every stap helpul.
 
