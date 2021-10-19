@@ -3,6 +3,7 @@ import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import AuthProvider from "./Context/AuthProvider";
+import Features from "./Pages/HomePage/Features/Features";
 import Footer from "./Pages/HomePage/Footer/Footer";
 import Header from "./Pages/HomePage/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
@@ -26,17 +27,16 @@ function App() {
                 <Route exact path="/home" component={HomePage} />
                 <Route exact path="/service" component={Services} />
                 <Route exact path="/team" component={Team} />
+                <Route exact path="/feature" component={Features} />
                 <Route exact path="/login" component={Login} />
-                
-                {/* <Route exact>
-                    <ServiceDetails></ServiceDetails>
-                </Route> */}
-                <PrivateRoute  path="/service/:serviceId">
+
+                <PrivateRoute exact  path="/service/:serviceId">
                   <ServiceDetails></ServiceDetails>
                 </PrivateRoute>
-                <PrivateRoute  path="/member/:memberId">
+                <PrivateRoute exact path="/member/:memberId">
                   <TeamMemberDetails></TeamMemberDetails>
                 </PrivateRoute>
+                
                 <Route path="*" component={NotFound}/>
               </Switch>
               <Footer></Footer>

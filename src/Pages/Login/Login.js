@@ -1,8 +1,22 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../Hooks/useAuth';
+
 
 const Login = () => {
     const {signInzUsingGoogle,isLoggedIn,formHandle,nameHandle,emailHandle,passwordHandle,checkHandler,resetPasswordHandle,error} = useAuth();
+
+
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/';
+
+    const handleGoogleLogin = () => {
+        signInzUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
     return (
         <div className="w-50 mh-100 mx-auto text-center mb-5">
             <h1 className="text-primary ">Please {isLoggedIn?"login": "resister"}</h1>
@@ -41,7 +55,7 @@ const Login = () => {
                 </form>
             {!isLoggedIn && <h2 className="text-center">----or----</h2>}
 
-            {!isLoggedIn && <button className="btn btn-success"  onClick={signInzUsingGoogle}>Googe sign In</button>}
+            {!isLoggedIn && <button className="btn btn-success"  onClick={handleGoogleLogin}>Googe sign In</button>}
         </div>
     );
 };

@@ -12,6 +12,7 @@ const useFirebase = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [loading, setLoading] = useState(true);
 
 
     const nameHandle= e =>{
@@ -22,13 +23,11 @@ const useFirebase = () => {
       
       const nameAdded = () =>{
         updateProfile(auth.currentUser, {
-          displayName: name, /* photoURL: "https://example.com/jane-q-user/profile.jpg" */
+          displayName: name,
         }).then(() => {
-          // Profile updated!
-          // ...
+          
         }).catch((error) => {
-          // An error occurred
-          // ...
+          setError(error.massage)
         });
       }
       
@@ -112,26 +111,30 @@ const useFirebase = () => {
     // handle google sign in button
     const signInzUsingGoogle = () =>{
         const googleProvider = new GoogleAuthProvider();
-        signInWithPopup(auth,googleProvider)
-        .then(result=>{
-            const {displayName,photoURL,email} = result.user;
-            const loggedUser = {
-              name:displayName,
-              photo:photoURL,
-              email:email
-            }
-            setUser(loggedUser);
-        })
+        return signInWithPopup(auth,googleProvider)
+        // .then(result=>{
+            // const {displayName,photoURL,email} = result.user;
+            // const loggedUser = {
+            //   name:displayName,
+            //   photo:photoURL,
+            //   email:email
+            // }
+            // setUser(loggedUser);
+        // })
+        .finally(() => { setLoading(false) });
+
     }
 
    
 
     // handle logout button
     const logOut = ()=> {
+      setLoading(true);
         signOut(auth)
         .then(()=>{
             setUser({});
         })
+        .finally(() => setLoading(false))
     }
 
     useEffect(()=>{
@@ -139,11 +142,15 @@ const useFirebase = () => {
             if (user) {
                 setUser(user);
             }
+            else {
+              setUser({});
+          }
+          setLoading(false);
         })
     },[])
 
     return {
-        user,name,email,password,error,isLoggedIn,
+        user,name,email,password,error,isLoggedIn,loading,
         nameHandle,
         checkHandler,
         emailHandle,

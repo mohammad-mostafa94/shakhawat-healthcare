@@ -53,7 +53,7 @@ const Footer = () => {
      ];
     return (
         <div>
-            <h1 className="text-center text-danger mt-5">About Us !</h1>
+            <h1 className="text-center text-primary mt-5">About Us !</h1>
             <SimpleReactFooter 
                 description={description} 
                 title={title}

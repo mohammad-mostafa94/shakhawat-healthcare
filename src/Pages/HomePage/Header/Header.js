@@ -12,7 +12,7 @@ import './Header.css';
 const Header = () => {
 
     const {user,logOut} = useAuth();
-    const userName = user.name;
+    const userName = user.displayName;
 
     const activeStyle={
         fontWeight: "bold",
