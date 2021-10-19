@@ -4,21 +4,21 @@ import { Button, Card, Col } from 'react-bootstrap';
 const Service = ({service}) => {
     const {id,name,image,describe} = service;
     return (
-        <div>
+        <>
             
                 <Col>
                         <Card>
-                            <Card.Img className="mw-100" variant="top" src={image}/>
+                            <Card.Img className="" variant="top" src={image}/>
                             <Card.Body>
                             <Card.Title>{name}</Card.Title>
                             <Card.Text>
-                                {describe.slice(0, 100)}...
+                               <small>{describe.slice(0, 100)}...</small> 
                             </Card.Text>
-                            <Button className="p-1" variant="primary">Details</Button>
+                            <Button  variant="primary">Details</Button>
                             </Card.Body>
                         </Card>
                     </Col>
-        </div>
+        </>
     );
 };
 

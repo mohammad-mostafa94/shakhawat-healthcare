@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import diagnosis from "../../../images/services/Diagnosis.jpg";
 import MinorProcedures from "../../../images/services/minor-procedures.jpg";
 import OrthopedicCare from "../../../images/services/orthopedic.jpg";
@@ -65,16 +65,18 @@ const Services = () => {
     
     return (
         <div className="text-center my-5">
-            <h1>Services</h1>
-            <Row xs={1} md={3} className="g-4">
+            <h1 className="text-danger my-3">Our Services</h1>
+            <Container>
+            <Row xs={1} md={3} className="g-4 ">
                 {
                     services.map(service=>(<Service
                         key = {service.id}
                         service = {service}
                     ></Service>))
                 }
-                
                 </Row>
+            </Container>
+           
         </div>
     );
 };

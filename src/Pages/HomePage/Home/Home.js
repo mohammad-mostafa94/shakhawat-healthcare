@@ -12,8 +12,9 @@ import doctor7 from "../../../images/doctors/doctors-7.jpg";
 const Home = () => {
     const AutoplaySlider = withAutoplay(AwesomeSlider);
     return (
-        <div>
-            <h1 className ="text-center text-success">SHAKHAWAT HEALTHCARE</h1>
+        <div className="container-fluid text-center ">
+            <h1 className ="text-success">SHAKHAWAT HEALTHCARE</h1>
+            <p>We welcome new patients from all communities and look forward to seeing you at one of our clinics. </p>
             <AutoplaySlider
                     play={true}
                     cancelOnInteraction={false} // should stop playing on user interaction
