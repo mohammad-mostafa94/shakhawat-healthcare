@@ -2,7 +2,6 @@ import doctor1 from "../../../images/doctor/doctor-1.jpg";
 import doctor2 from "../../../images/doctor/doctor-2.jpg";
 import doctor3 from "../../../images/doctor/doctor-3.jpg";
 import doctor4 from "../../../images/doctor/doctor-4.jpg";
-import doctor5 from "../../../images/doctor/doctor-5.jpg";
 import doctor6 from "../../../images/doctor/doctor-6.jpg";
 
 const teamInfo = [
@@ -38,7 +37,7 @@ const teamInfo = [
         },
         {
             id:6,
-            image:doctor5,
+            image:"https://i.ibb.co/RNqndR8/musa.jpg",
             name:"Dr. A K M Musa",
             description:"Professor Dr. A K M Musa is one of the well-known Diabetologist & Medicine Specialist in Bangladesh. He is the professor of the Department of Medicine, Ibrahim Medical College. He completed MBBS with the highest-ranking result from the Dhaka Medical College. "
         }

@@ -7,7 +7,7 @@ const Feature = ({feature}) => {
     const {name,image} = feature;
     return (
         <div>
-            <Card sx={{ maxWidth: 345 }}>
+            <Card className=" hover-card" sx={{ maxWidth: 345 }}>
                 <CardMedia
                     component="img"
                     height="140"

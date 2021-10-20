@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { useHistory } from 'react-router';
+import './Service.css';
 
 const Service = ({service}) => {
     const {id,name,image,describe} = service;
@@ -10,9 +11,9 @@ const Service = ({service}) => {
         history.push(`/service/${id}`)
     }
     return (
- 
-                <Col>
-                        <Card>
+            <div className="">
+                <Col >
+                        <Card className=" hover-card">
                             <Card.Img className="" variant="top" src={image}/>
                             <Card.Body>
                             <Card.Title>{name}</Card.Title>
@@ -23,6 +24,7 @@ const Service = ({service}) => {
                             </Card.Body>
                         </Card>
                     </Col>
+                </div>
     );
 };
 

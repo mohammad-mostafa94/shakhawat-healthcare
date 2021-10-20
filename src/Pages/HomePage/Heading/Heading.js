@@ -1,10 +1,10 @@
 import React from 'react';
+import './Heading.css';
 
 const Heading = () => {
     return (
-        <div className="text-center my-5">
-            <h1 className ="text-success">SHAKHAWAT HEALTHCARE</h1>
-            <p>We welcome new patients from all communities and look forward to seeing you at one of our clinics. </p>
+        <div className="bg-heading">
+            <h1 className ="bg-text">SHAKHAWAT HEALTHCARE</h1>
         </div>
     );
 };

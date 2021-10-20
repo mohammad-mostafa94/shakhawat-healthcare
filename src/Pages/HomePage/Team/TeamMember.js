@@ -9,8 +9,8 @@ const TeamMember = ({member}) => {
     const {name, image, description,id} = member;
 
     return (
-        <div>
-            <Card sx={{ maxWidth: 345 }}>
+        <div >
+            <Card className=" hover-card" sx={{ maxWidth: 345 }}>
                 <CardMedia
                     component="img"
                     height="140"

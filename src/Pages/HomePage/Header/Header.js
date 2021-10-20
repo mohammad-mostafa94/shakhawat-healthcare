@@ -20,36 +20,36 @@ const Header = () => {
         }
 
     return (
-        <div className="">
-        <header >
-            <nav className="navbar navbar-expand-sm navbarStyle navbar-dark   mb-3">                
-                <Link to="/" className="navbar-brand">
-                    <img className="rounded-circle p-0" src={logo} style={{width:'110px'}} alt="Logo" />
-                </Link>  
+        <div>
+            <header>
+                <nav className="navbar navbar-expand-sm  navbarStyle navbar-dark  ">                
+                    <Link to="/" className="navbar-brand">
+                        <img className="rounded-circle p-0" src={logo} style={{width:'110px'}} alt="Logo" />
+                    </Link>  
 
-                <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className=""> <BsCardList /></span>
-                </button>
-                
-                <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul className="navbar-nav ml-auto">
-                        <NavLink activeStyle={activeStyle} to='/home'  className="nav-item linkStyle ">Home</NavLink>
+                    <button className="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className=""> <BsCardList /></span>
+                    </button>
+                    
+                    <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul className="navbar-nav ml-auto">
+                            <NavLink activeStyle={activeStyle} to='/home'  className="nav-item linkStyle ">Home</NavLink>
 
-                        <NavLink activeStyle={activeStyle} to='/service' className="nav-item linkStyle">Services</NavLink>
+                            <NavLink activeStyle={activeStyle} to='/service' className="nav-item linkStyle">Services</NavLink>
 
-                        <NavLink activeStyle={activeStyle} to='/team' className="nav-item linkStyle">Team</NavLink>
+                            <NavLink activeStyle={activeStyle} to='/team' className="nav-item linkStyle">Team</NavLink>
 
-                        <NavLink activeStyle={activeStyle} to='/feature' className="nav-item linkStyle">Feature</NavLink>
+                            <NavLink activeStyle={activeStyle} to='/feature' className="nav-item linkStyle">Feature</NavLink>
 
-                        {userName && <h6 className="mx-3 text-warning">{userName.split(' ')[0]}</h6>}
+                            {userName && <h6 className="mx-3 mt-2 text-warning">{userName.split(' ')[0]}</h6>}
 
-                        {userName ? <Button variant="secondary" className=" mx-2" onClick={logOut} >logout<BiLogOut/></Button> : <NavLink  to='/login' className="nav-item mx-2  btn btn-secondary ">Login <FiLogIn/> </NavLink>}
+                            {userName ? <Button variant="secondary" className=" mx-2" onClick={logOut} >logout<BiLogOut/></Button> : <NavLink  to='/login' className="nav-item mx-2  btn btn-secondary ">Login <FiLogIn/> </NavLink>}
 
-                    </ul>
-                </div>
-            </nav>
-        </header>    
-    </div>
+                        </ul>
+                    </div>
+                </nav>
+            </header>    
+        </div>
     );
 };
 

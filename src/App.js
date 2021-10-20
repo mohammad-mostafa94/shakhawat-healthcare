@@ -2,10 +2,12 @@
 import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
+import './App.css';
 import AuthProvider from "./Context/AuthProvider";
 import Features from "./Pages/HomePage/Features/Features";
 import Footer from "./Pages/HomePage/Footer/Footer";
 import Header from "./Pages/HomePage/Header/Header";
+import Heading from "./Pages/HomePage/Heading/Heading";
 import HomePage from "./Pages/HomePage/HomePage";
 import ServiceDetails from "./Pages/HomePage/Services/Service/ServiceDetails";
 import Services from "./Pages/HomePage/Services/Services";
@@ -18,9 +20,11 @@ import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 
 function App() {
   return (
-    <div className="">
-        <AuthProvider>
+    <div>
+    
+      <AuthProvider>
           <Router>
+            <Heading></Heading>
               <Header></Header>
               <Switch>
                 <Route exact path="/" component={HomePage} />
@@ -41,11 +45,8 @@ function App() {
               </Switch>
               <Footer></Footer>
           </Router>
-      </AuthProvider>
-    
+      </AuthProvider>        
     </div>
-    
-    
   );
 }
 
