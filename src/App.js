@@ -21,31 +21,32 @@ import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 function App() {
   return (
     <div>
-    
-      <AuthProvider>
-          <Router>
-            <Heading></Heading>
-              <Header></Header>
-              <Switch>
-                <Route exact path="/" component={HomePage} />
-                <Route exact path="/home" component={HomePage} />
-                <Route exact path="/service" component={Services} />
-                <Route exact path="/team" component={Team} />
-                <Route exact path="/feature" component={Features} />
-                <Route exact path="/login" component={Login} />
 
-                <PrivateRoute exact  path="/service/:serviceId">
-                  <ServiceDetails></ServiceDetails>
-                </PrivateRoute>
-                <PrivateRoute exact path="/member/:memberId">
-                  <TeamMemberDetails></TeamMemberDetails>
-                </PrivateRoute>
-                
-                <Route path="*" component={NotFound}/>
-              </Switch>
-              <Footer></Footer>
-          </Router>
-      </AuthProvider>        
+      <AuthProvider>
+        // react router v5
+        <Router>
+          <Heading></Heading>
+          <Header></Header>
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/home" component={HomePage} />
+            <Route exact path="/service" component={Services} />
+            <Route exact path="/team" component={Team} />
+            <Route exact path="/feature" component={Features} />
+            <Route exact path="/login" component={Login} />
+
+            <PrivateRoute exact path="/service/:serviceId">
+              <ServiceDetails></ServiceDetails>
+            </PrivateRoute>
+            <PrivateRoute exact path="/member/:memberId">
+              <TeamMemberDetails></TeamMemberDetails>
+            </PrivateRoute>
+
+            <Route path="*" component={NotFound} />
+          </Switch>
+          <Footer></Footer>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
