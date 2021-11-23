@@ -1,5 +1,5 @@
 # Shakhawat Healthcare 
-This Health care (also health-care or healthcare) is the maintenance or improvement of health via the prevention, diagnosis, treatment, recovery, or cure of disease, illness, injury, and other physical and mental impairments in people.
+This Health care  is the maintenance or improvement of health via the prevention, diagnosis, treatment, recovery, or cure of disease, illness, injury, and other physical and mental impairments in people.
 
 Live Link: https://shakhawat-healtcare.web.app/
 
