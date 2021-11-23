@@ -9,5 +9,5 @@ Live Link: https://shakhawat-healtcare.web.app/
 - Maximum doctors everyday vistis this hospital.
 - Every  servises updateable  .
 - Every patien easily solve every problem .
-- Each and every stap helpul.
+-  Every staff helpul.
 
